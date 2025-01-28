@@ -27,6 +27,7 @@ steps:
     path: /tmp/suzieq
   commands:
   - pip install -r python-material/python-requirements.txt 
+  - cd /tmp/suzieq
   - python3 /tmp/suzieq/test_vlan.py
 
 volumes:
