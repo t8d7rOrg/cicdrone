@@ -9,13 +9,18 @@ steps:
   - echo hello
   - echo world
 
-- name: ansible-test
-  image: plugins/ansible:linux-amd64
-  settings:
-    become: true
-    playbook: ansible-material/playbook.yaml
-    inventory: ansible-material/inventory
-    ssh_extra_args: "-o StrictHostKeyChecking=no"
-    requirements: ansible-material/requirements.txt
-    galaxy: ansible-material/requirements.yml
-    syntax_check: false
+    #- name: ansible-test
+    #image: plugins/ansible:linux-amd64
+    #settings:
+    #become: true
+    #playbook: ansible-material/playbook.yaml
+    #inventory: ansible-material/inventory
+    #ssh_extra_args: "-o StrictHostKeyChecking=no"
+    #requirements: ansible-material/requirements.txt
+    #galaxy: ansible-material/requirements.yml
+    #syntax_check: false
+
+- name: pythontest
+  image: python:3.9
+  commands:
+  - pytest
