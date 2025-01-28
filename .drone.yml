@@ -3,11 +3,11 @@ type: docker
 name: default
 
 steps:
-- name: greeting
-  image: alpine
+- name: check yaml
+  image: python:3.9
   commands:
-  - echo hello
-  - echo world
+  - pip install yamllint
+  - yamllint infrasot/vlan_list.yml
 
     #- name: ansible-test
     #image: plugins/ansible:linux-amd64
