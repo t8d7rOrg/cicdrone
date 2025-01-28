@@ -22,6 +22,14 @@ steps:
 
 - name: pythontest
   image: python:3.9
+  volumes:
+  - name: suzieq
+    path: /tmp/suzieq
   commands:
   - pip install -r python-material/python-requirements.txt 
-  - python3 ../Suzie-q/suzieqven/test_vlan.py
+  - python3 /tmp/suzieq/test_vlan.py
+
+volumes:
+- name: suzieq
+  host:
+    path: /home/tom87/Suzie-q/suzieqven
