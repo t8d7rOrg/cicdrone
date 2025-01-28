@@ -10,7 +10,7 @@ steps:
   - echo world
 
 - name: ansible-test
-  image: plugin/ansible:3
+  image: plugins/ansible:linux-amd64
   settings:
     become: true
     playbook: ansible-material/playbook.yml
