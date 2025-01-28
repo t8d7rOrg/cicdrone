@@ -16,6 +16,6 @@ steps:
     playbook: ansible-material/playbook.yml
     inventory: ansible-material/inventory
     ssh_extra_args: "-o StrictHostKeyChecking=no"
-//    requirements: requirements.txt
+    requirements: ansible-material/requirements.txt
     galaxy: ansible-material/requirements.yml
     syntax_check: true
