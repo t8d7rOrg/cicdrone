@@ -23,4 +23,5 @@ steps:
 - name: pythontest
   image: python:3.9
   commands:
+  - pip install -r python-material/python-requirements.txt 
   - pytest
