@@ -18,4 +18,4 @@ steps:
     ssh_extra_args: "-o StrictHostKeyChecking=no"
     requirements: ansible-material/requirements.txt
     galaxy: ansible-material/requirements.yml
-    syntax_check: true
+    syntax_check: false

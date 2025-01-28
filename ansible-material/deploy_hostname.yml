@@ -8,4 +8,4 @@
   - name: Test SONiC system
     sonic_system:
       config:
-        hostname: LEAF01
+        hostname: LEAF-TEST
