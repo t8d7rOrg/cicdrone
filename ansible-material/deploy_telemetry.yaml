@@ -1,0 +1,21 @@
+---
+- hosts: LEAF03
+  gather_facts: False
+  connection: httpapi
+  collections:
+    - dellemc.enterprise_sonic
+  tasks:
+  - name: Copy telegraf .conf
+    connection: ssh
+    copy:
+      src: "./sources/telegraf.conf"
+      dest: "/home/admin/telegraf.conf"
+
+  - name: Deploy telegraf container
+    vars:
+      ansible_connection: network_cli
+    dellemc.enterprise_sonic.sonic_command:
+      commands: tpcm install name telegraf pull telegraf args "-v /home/admin/telegraf.conf:/etc/telegraf/telegraf.conf:ro -v /var/run/docker.sock:/var/run/docker.sock --net=host"
+    register: result
+
+  - debug: var=result.stdout_lines

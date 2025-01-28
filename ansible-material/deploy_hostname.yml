@@ -1,0 +1,11 @@
+---
+- hosts: LEAF01
+  gather_facts: False
+  connection: httpapi
+  collections:
+    - dellemc.enterprise_sonic
+  tasks:
+  - name: Test SONiC system
+    sonic_system:
+      config:
+        hostname: LEAF01

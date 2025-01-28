@@ -1,0 +1,15 @@
+---
+- hosts: LEAF01
+  gather_facts: False
+  connection: httpapi
+  collections:
+    - dellemc.enterprise_sonic
+  tasks:
+  - name: configure Vlan
+    sonic_l2_interfaces:
+      config:
+       - name: "{{Eth1/5,Eth1/6}}"
+         access:
+           vlan: 10
+      state: merged
+        

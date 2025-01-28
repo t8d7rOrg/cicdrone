@@ -1,0 +1,5 @@
+---
+collections:
+  # Install a collection from Ansible Galaxy.
+  - name: dellemc.enterprise_sonic
+    source: https://galaxy.ansible.com
