@@ -13,7 +13,7 @@ steps:
   image: plugins/ansible:linux-amd64
   settings:
     become: true
-    playbook: ansible-material/playbook.yml
+    playbook: ansible-material/playbook.yaml
     inventory: ansible-material/inventory
     ssh_extra_args: "-o StrictHostKeyChecking=no"
     requirements: ansible-material/requirements.txt
