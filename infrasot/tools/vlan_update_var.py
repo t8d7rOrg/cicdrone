@@ -44,4 +44,5 @@ else :
     print ("Following vlans shoudl be deleted :",vlan_list_to_be_deleted)
 
 vgf = jinja2.Environment(loader=jinja2.FileSystemLoader(path_template)).get_template('vlan_update.j2').render(vlans = vlan_list_to_be_created)
+print (vgf)
 with open(group_vars_path+"Leaves.yaml",'w') as f: f.write(vgf)
