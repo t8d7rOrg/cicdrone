@@ -30,7 +30,7 @@ steps:
   settings:
   become: true
   playbook: ansible-material/test.yml
-  nventory: ansible-material/inventory
+  inventory: ansible-material/inventory
   ssh_extra_args: "-o StrictHostKeyChecking=no"
   requirements: ansible-material/requirements.txt
   galaxy: ansible-material/requirements.yml
