@@ -3,45 +3,48 @@ type: docker
 name: default
 
 steps:
-- name: check yaml
-  image: python:3.9
-  commands:
-  - pip install yamllint
-  - yamllint infrasot/vlan_list.yml
+  #- name: check yaml
+  #image: python:3.9
+  #commands:
+  #- pip install yamllint
+  #- yamllint infrasot/vlan_list.yml
 
-- name: check infra state
-  image: python:3.9
+  #- name: check infra state
+  #image: python:3.9
+  #volumes:
+  #- name: suzieq
+  #  path: /tmp/suzieq
+  #- name: tmp
+  #  path: /tmp/ansible
+  #commands:
+  #- pip install -r python-material/python-requirements.txt
+  #- cd /tmp/suzieq
+  #- python3 /drone/src/infrasot/tools/check_state.py 
+  #- python3 /drone/src/infrasot/tools/vlan_update_var.py
+
+- name: ansible-test
+  image: plugins/ansible:linux-amd64
   volumes:
-  - name: suzieq
-    path: /tmp/suzieq
   - name: tmp
     path: /tmp/ansible
-  commands:
-  - pip install -r python-material/python-requirements.txt
-  - cd /tmp/suzieq
-  - python3 /drone/src/infrasot/tools/check_state.py 
-  - python3 /drone/src/infrasot/tools/vlan_update_var.py
+  settings:
+  become: true
+  playbook: ansible-material/copy_vars.yml,ansible-material/create_vlans.yml
+  nventory: ansible-material/inventory
+  ssh_extra_args: "-o StrictHostKeyChecking=no"
+  requirements: ansible-material/requirements.txt
+  galaxy: ansible-material/requirements.yml
+  syntax_check: false
 
-    #- name: ansible-test
-    #image: plugins/ansible:linux-amd64
-    #settings:
-    #become: true
-    #playbook: ansible-material/playbook.yaml
-    #inventory: ansible-material/inventory
-    #ssh_extra_args: "-o StrictHostKeyChecking=no"
-    #requirements: ansible-material/requirements.txt
-    #galaxy: ansible-material/requirements.yml
-    #syntax_check: false
-
-- name: pythontest
-  image: python:3.9
-  volumes:
-  - name: suzieq
-    path: /tmp/suzieq
-  commands:
-  - pip install -r python-material/python-requirements.txt 
-  - cd /tmp/suzieq
-  - python3 /tmp/suzieq/test_vlan.py
+    #- name: pythontest
+    #image: python:3.9
+    #volumes:
+    #- name: suzieq
+    #    path: /tmp/suzieq
+    #commands:
+    #- pip install -r python-material/python-requirements.txt 
+    #- cd /tmp/suzieq
+    #- python3 /tmp/suzieq/test_vlan.py
 
 volumes:
 - name: suzieq

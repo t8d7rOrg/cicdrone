@@ -1,0 +1,9 @@
+---
+- hosts: localhost
+  gather_facts: no
+  tasks:
+    - name : copy var file
+      copy:
+        src: /tmp/ansible/Leaves.yaml
+        dest: /drone/src/1ansible-material/group_vars/Leaves.yaml
+        mode: '0644'
