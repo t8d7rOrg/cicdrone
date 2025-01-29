@@ -1,5 +1,7 @@
 ---
 vlans_list:
+  1:
+  3967:
   11:
     name: vlan_11
     network: 192.168.11.0/24
