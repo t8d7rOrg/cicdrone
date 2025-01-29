@@ -9,7 +9,7 @@ import numpy as np
 from suzieq.sqobjects import get_sqobject
 from rich import print
 
-yaml_path = "infrasot/archive/vlan_list_last_state.yml"
+yaml_path = "/drone/src/infrasot/archive/vlan_list_last_state.yml"
 
 def load_yaml_file(path):
     with open(path, 'r') as stream:

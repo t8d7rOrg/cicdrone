@@ -17,7 +17,7 @@ steps:
   commands:
     #- pip install -r python-material/python-requirements.txt
     #- cd /tmp/suzieq
-  - python3 ls.py 
+  - python3 /drone/src/infrasot/tools/check_state.py 
     #- name: ansible-test
     #image: plugins/ansible:linux-amd64
     #settings:
