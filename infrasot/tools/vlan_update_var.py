@@ -9,7 +9,7 @@ import numpy as np
 from suzieq.sqobjects import get_sqobject
 from rich import print
 
-old_yaml_path = "/drone/src/nfrasot/archive/vlan_list_last_state.yml"
+old_yaml_path = "/drone/src/infrasot/archive/vlan_list_last_state.yml"
 new_yaml_path = "/drone/src/infrasot/vlan_list.yml"
 path_template = "/drone/src/ansible-material/template"
 group_vars_path = "/done/src/ansible-material/group_vars/"
