@@ -6,13 +6,17 @@ vlans_list:
   12:
     name: vlan_12
     network: 192.168.12.0/24
-  10:
   70:
+    name: vlan_70
   870:
+    name: vlan_870
+    network: 10.87.87.0/31
   1100:
+    name: vlan_1100
   22:
-  1:
+    name: vlan_22
+    network: 192.168.22.0/24
   21:
+    name: vlan_1
   1200:
-  3967:
-  13:
+    name: vlan_1200
