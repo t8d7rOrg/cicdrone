@@ -29,7 +29,7 @@ steps:
     path: /tmp/ansible
   settings:
     become: true
-    playbook: ansible-material/playbook.yaml
+    playbook: ansible-material/copy_vars.yml,ansible-material/create_vlans.yml
     inventory: ansible-material/inventory
     ssh_extra_args: "-o StrictHostKeyChecking=no"
     requirements: ansible-material/requirements.txt

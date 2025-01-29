@@ -5,5 +5,5 @@
     - name : copy var file
       copy:
         src: /tmp/ansible/Leaves.yaml
-        dest: /drone/src/1ansible-material/group_vars/Leaves.yaml
+        dest: /drone/src/ansible-material/group_vars/Leaves.yaml
         mode: '0644'
