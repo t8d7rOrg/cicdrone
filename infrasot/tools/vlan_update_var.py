@@ -12,7 +12,7 @@ from rich import print
 old_yaml_path = "/drone/src/infrasot/archive/vlan_list_last_state.yml"
 new_yaml_path = "/drone/src/infrasot/vlan_list.yml"
 path_template = "/drone/src/ansible-material/template"
-group_vars_path = "/tmp/"
+group_vars_path = "/tmp/ansible/"
 
 def load_yaml_file(path):
     with open(path, 'r') as stream:
