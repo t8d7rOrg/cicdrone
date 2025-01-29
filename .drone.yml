@@ -18,6 +18,8 @@ steps:
   - pip install -r python-material/python-requirements.txt
   - cd /tmp/suzieq
   - python3 /drone/src/infrasot/tools/check_state.py 
+  - python3 /drone/src/infrasot/tools/vlan_update_var.py
+
     #- name: ansible-test
     #image: plugins/ansible:linux-amd64
     #settings:

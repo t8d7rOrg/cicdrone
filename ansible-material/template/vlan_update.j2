@@ -1,0 +1,7 @@
+sonic_vlans:
+{%- if  vlans %}
+{%- for vlan in vlans %}
+  - vlan_id: {{ vlan }}
+{%- endfor %}
+{%- endif %}
+
