@@ -16,7 +16,7 @@ steps:
     path: /tmp/suzieq
   commands:
   - pip install -r python-material/python-requirements.txt
-    #- cd /tmp/suzieq
+  - cd /tmp/suzieq
   - python3 /drone/src/infrasot/tools/check_state.py 
     #- name: ansible-test
     #image: plugins/ansible:linux-amd64
