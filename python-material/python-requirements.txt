@@ -1,2 +1,2 @@
-suzieq==0.23.0
 gitpython
+pyyaml
