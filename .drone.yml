@@ -14,6 +14,8 @@ steps:
   volumes:
   - name: suzieq
     path: /tmp/suzieq
+  - name: tmp
+    path: /tmp/ansible
   commands:
   - pip install -r python-material/python-requirements.txt
   - cd /tmp/suzieq
@@ -45,3 +47,6 @@ volumes:
 - name: suzieq
   host:
     path: /home/tom87/Suzie-q/suzieqven
+- name: tmp
+  host:
+    path: /tmp
