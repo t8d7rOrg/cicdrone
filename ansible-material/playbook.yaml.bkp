@@ -1,0 +1,17 @@
+---
+- hosts: localhost
+  tasks:
+    - name: Print message to check ansible version
+      debug:
+        msg: "Ansible version is  {{ ansible_version.full }}"
+
+- hosts: LEAF01
+  gather_facts: False
+  connection: httpapi
+  collections:
+    - dellemc.enterprise_sonic
+  tasks:
+  - name: Test SONiC system
+    sonic_system:
+      config:
+        hostname: LEAF01

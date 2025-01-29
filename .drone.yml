@@ -29,7 +29,7 @@ steps:
     path: /tmp/ansible
   settings:
   become: true
-  playbook: ansible-material/copy_vars.yml
+  playbook: ansible-material/copy_vars.yaml
   nventory: ansible-material/inventory
   ssh_extra_args: "-o StrictHostKeyChecking=no"
   requirements: ansible-material/requirements.txt
