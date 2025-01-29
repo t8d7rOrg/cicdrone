@@ -9,6 +9,14 @@ steps:
   - pip install yamllint
   - yamllint infrasot/vlan_list.yml
 
+- name: check infra state
+  image: python:3.9
+  volumes:
+  - name: suzieq
+    path: /tmp/suzieq
+  commands:
+  - pip install -r python-material/python-requirements.txt
+  - python3 infrasot/tools/check_state.py
     #- name: ansible-test
     #image: plugins/ansible:linux-amd64
     #settings:
