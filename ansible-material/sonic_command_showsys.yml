@@ -1,0 +1,13 @@
+---
+- hosts: LEAF01
+  gather_facts: False
+  connection: network_cli
+  collections:
+    - dellemc.enterprise_sonic
+  tasks:
+  - name: Test SONiC system
+    dellemc.enterprise_sonic.sonic_command:
+      commands: show system status brief
+    register: result
+
+  - debug: msg="{{ result | to_json }}"

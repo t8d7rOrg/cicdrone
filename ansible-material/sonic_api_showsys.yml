@@ -1,0 +1,15 @@
+---
+- hosts: LEAF01
+  gather_facts: False
+  connection: httpapi
+  collections:
+    - dellemc.enterprise_sonic
+  tasks:
+  - name: Test sonic api
+    dellemc.enterprise_sonic.sonic_api:
+      url: data/sonic-vlan:sonic-vlan
+      method: "GET"
+      status_code: 200
+    register: result
+
+  - debug: msg="{{ result | to_json }}"

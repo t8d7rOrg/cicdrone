@@ -22,5 +22,5 @@ vlans_list:
     name: vlan_1
   1200:
     name: vlan_1200
-  17:
-    name: vlan_17
+  18:
+    name: vlan_18
